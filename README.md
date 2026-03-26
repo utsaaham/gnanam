@@ -1,4 +1,4 @@
-# Gnanam
+# Gnanam (జ్ఞానం — Knowledge / Awareness)
 
 A portable memory system that lets any AI coding agent onboard itself, remember context across sessions, and coordinate with other agents — without you re-explaining your project every time.
 
@@ -168,6 +168,17 @@ Change `state: populated` back to `state: template` in any index file, delete th
 
 **Does this add overhead to my repo?**
 The `.memory/` folder is all markdown — a few KB at most. Add it to `.gitignore` if you don't want it versioned, but versioning it means your whole team (human and AI) shares context.
+
+---
+
+## Live Example
+
+See Gnanam in action on a real project — fully populated `.memory/` with agents, skills, rules, and context:
+
+- [`.memory/` folder (populated)](https://github.com/utsaaham/arogyamandiram/tree/feature/dev-01/.memory)
+- [`project-memory.md` (populated)](https://github.com/utsaaham/arogyamandiram/blob/feature/dev-01/project-memory.md)
+
+This is the [Arogyamandiram](https://github.com/utsaaham/arogyamandiram/tree/feature/dev-01) project — use it as a reference to see what the memory system looks like after an agent has completed the first-time setup.
 
 ---
 
