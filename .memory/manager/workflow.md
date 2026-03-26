@@ -1,3 +1,12 @@
+---
+state: template
+created: 2026-03-26
+last_updated: 2026-03-26
+last_read: —
+updated_by: claude-opus
+staleness_days: 30
+---
+
 # Workflow
 
 How every task flows from start to finish.
@@ -22,3 +31,4 @@ How every task flows from start to finish.
 - No feature ships without tests
 - Agent must state its plan before executing (user can course-correct)
 - Update context files after significant work
+- Update `last_updated` in frontmatter of any file you modify

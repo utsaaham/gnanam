@@ -1,18 +1,26 @@
+---
+state: template
+created: 2026-03-26
+last_updated: 2026-03-26
+last_read: —
+updated_by: claude-opus
+staleness_days: 14
+---
+
 # Commands
 
 This folder holds step-by-step workflows for common tasks in this project.
 
-## Before You Create Anything
+## Setup Instructions
 
 1. Read the codebase first
 2. Understand how development works — how to run, test, and build the project
 3. Understand how deployment works — what steps are needed to ship code
 4. Understand common tasks — what do people do repeatedly?
 5. Based on what you find, create command files as step-by-step recipes
+6. Return here and **replace this entire file** with the populated format
 
 ## What Kind of Commands to Create
-
-Once you understand the project, consider creating files like:
 
 - **new-feature.md** — Steps to add a new feature from start to finish
 - **fix-bug.md** — Steps to investigate and fix a bug
@@ -32,4 +40,24 @@ Each command file is a recipe — clear steps anyone can follow:
 - Only create commands for workflows that make sense for this project
 - Write them so that someone new to the project can follow along
 - Keep them practical and specific, not generic
-- Update this file with a list of commands once they are created
+
+---
+
+## Populated Format
+
+> When you populate this file, delete everything above and use this format instead:
+
+```markdown
+# Commands
+
+## Available Workflows
+
+| Command | File | When to Use |
+|---------|------|------------|
+| [Name] | `commands/[name].md` | [when to use it] |
+
+## Actions
+
+- **Repeated a workflow 3+ times without a command file?** Create one.
+- **Workflow changed?** Update the command file.
+```

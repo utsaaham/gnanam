@@ -1,3 +1,12 @@
+---
+state: template
+created: 2026-03-26
+last_updated: 2026-03-26
+last_read: —
+updated_by: claude-opus
+staleness_days: 3
+---
+
 # Project Memory
 
 > This is the starting point for any AI agent working on this project.
@@ -8,16 +17,13 @@
 
 ## Memory Status
 
-This table tracks when each section of memory was last updated and by whom.
-If a section is outdated, re-read the codebase and update it.
-
-| Section | Last Updated | Updated By | Status |
-|---------|-------------|------------|--------|
-| context/ | — | — | Not yet created |
-| agents/ | — | — | Not yet created |
-| skills/ | — | — | Not yet created |
-| rules/ | — | — | Not yet created |
-| commands/ | — | — | Not yet created |
+| Section | Last Updated | Updated By | Stale After | Status |
+|---------|-------------|------------|-------------|--------|
+| context/ | — | — | 3 days | Not yet created |
+| agents/ | — | — | 7 days | Not yet created |
+| skills/ | — | — | 10 days | Not yet created |
+| rules/ | — | — | 14 days | Not yet created |
+| commands/ | — | — | 14 days | Not yet created |
 
 ---
 
@@ -45,9 +51,10 @@ If the Memory Status table above shows "Not yet created" for everything:
 5. **Then `skills/`** — document the technologies used
 6. **Then `rules/`** — capture the conventions and patterns you see
 7. **Then `commands/`** — write step-by-step guides for common workflows
-8. **Update the Memory Status table** — put today's date, your name, and "Up to date" for each section you created
+8. **Update the Memory Status table** — put today's date, your name, and "Current" for each section
+9. **Change `state` in frontmatter to `populated`** — so returning agents know setup is done
 
-The key idea: **understand first, then write**. Don't make up content for a project you haven't read.
+> **Important:** Once populated, replace the "First Time Here?" and "Returning?" sections with a "Quick Start" section. Template instructions should not remain in a populated file.
 
 ---
 
@@ -55,9 +62,9 @@ The key idea: **understand first, then write**. Don't make up content for a proj
 
 If the Memory Status table has dates in it, the memory has been set up before.
 
-1. **Check the dates** — how long ago was each section updated?
-2. **If the project may have changed since then** — re-read the codebase to see what is different
-3. **Update any sections that are out of date** — fix the memory files and update the date in the table above
+1. **Check the dates and "Stale After" column** — is any section past its staleness threshold?
+2. **If stale** — re-read the relevant parts of the codebase and update those sections
+3. **Update `last_read` in this file's frontmatter** to today's date
 4. **Then start your task** — you now have fresh context
 
 ---
@@ -68,4 +75,5 @@ After you do significant work:
 
 1. Update the relevant files in `.memory/`
 2. Update the **Memory Status table** above with today's date and your name
-3. Keep files concise — every line costs context window space
+3. Update `last_updated` in the frontmatter of any file you modified
+4. Keep files concise — every line costs context window space
