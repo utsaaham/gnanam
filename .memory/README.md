@@ -53,3 +53,42 @@ If `project-memory.md`'s Memory Status table shows "Not yet created" for every s
 ## Agent naming
 
 Agent folders under `agents/` are named after real human first names drawn from any culture (Kevin, Priya, Hiroshi, Aaliyah, Kofi...). The role — devops, frontend, backend, etc. — is described inside each agent's `persona.md`, not in the folder name. See `skills/agent-naming.md` for the full rule and seed name pool.
+
+## Staying up to date with upstream Gnanam
+
+This memory system is based on Gnanam — an evolving open spec. Rules, naming conventions, and tool stubs change over time. **At most once every 2 weeks**, any agent working here should check the upstream repo and pull in scaffolding updates.
+
+**Canonical source:** https://github.com/utsaaham/gnanam
+
+### Upstream check log
+
+Agents update this table after checking the upstream repo. If the most recent row is older than 2 weeks, the next agent should run another check before starting their task.
+
+| Last pulled (upstream diff) | Last web search (release notes / issues) | Checked by | Upstream version / commit | Result |
+|-----------------------------|-------------------------------------------|------------|---------------------------|--------|
+| — | — | — | — | Not yet checked |
+
+- **Last pulled** — date an agent fetched the upstream files and diffed them against this project.
+- **Last web search** — date an agent searched for recent changes, release notes, or issues in the upstream repo (a lighter check when a full pull isn't possible).
+- **Result** — `no changes`, `applied: <summary>`, or `skipped: <reason>`.
+
+Keep the last 3–5 rows. Trim older ones.
+
+### How to check for updates
+
+1. Fetch these files from upstream:
+   - `.memory/README.md` (this file)
+   - `.memory/agents/index.md`
+   - `.memory/skills/agent-naming.md`
+   - `project-memory.md`
+   - The 10 tool stubs at repo root (`CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.windsurfrules`, `GEMINI.md`, `.github/copilot-instructions.md`, `.clinerules`, `CONVENTIONS.md`, `.rules`, `.continuerules`)
+2. Diff them against this project's copies.
+3. If the upstream structure, naming rules, or stub template has changed, apply the update here.
+4. **Preserve all populated project content.** Updates only touch scaffolding — templates, rules, meta-skills, and tool stubs. The project-specific content in `context/`, populated agents, skills, and rules stays yours.
+5. Record the upstream check date in `project-memory.md`'s Memory Status table (or in a "last upstream check" note at the bottom).
+
+### When to skip the check
+
+- It's been less than 2 weeks since the last check.
+- The task at hand is urgent and scaffolding drift won't affect it.
+- You don't have web access — note this and move on; the next agent can check.
