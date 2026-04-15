@@ -144,14 +144,30 @@ No code gets written without loading rules first. No feature ships without tests
 
 ## Integrating with AI Tools
 
-To make agents auto-load memory on startup:
+Each AI tool has its own native instruction file at the repo root. Gnanam ships a ready-made stub for **10 tools** — each file tells the agent to read `project-memory.md` and `.memory/README.md` before doing anything. Pick the one your tool loads automatically; if you use multiple tools, they all point at the same memory so context stays in sync.
 
-| Tool | How |
-|------|-----|
-| **Claude Code** | Add a `CLAUDE.md` at root with: `Read project-memory.md before starting any task.` |
-| **Cursor** | Add a `.cursorrules` file with the same instruction |
-| **Windsurf** | Add a `.windsurfrules` file |
-| **Other tools** | Paste the instruction in your system prompt or first message |
+| Tool | File | Notes |
+|------|------|-------|
+| **Claude Code** | `CLAUDE.md` | Loaded automatically by Claude Code. |
+| **OpenAI Codex** | `AGENTS.md` | Also the cross-tool open standard (Cursor, Windsurf, Gemini CLI, Zed, RooCode all read it). |
+| **Cursor** | `.cursorrules` | Legacy single-file format; still read by Cursor. |
+| **Windsurf** | `.windsurfrules` | |
+| **Gemini CLI** | `GEMINI.md` | |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | |
+| **Cline** | `.clinerules` | |
+| **Aider** | `CONVENTIONS.md` | Point aider at it via `--read CONVENTIONS.md` or `.aider.conf.yml`. |
+| **Zed AI** | `.rules` | |
+| **Continue.dev** | `.continuerules` | |
+
+### If you want to add tool-specific rules
+
+Keep the shared stub at the top of the file (so memory still loads), then **append** your tool-specific rules below it. For example, put Claude Code hooks in `CLAUDE.md` under the stub; put Cursor `.mdc` activation modes in `.cursor/rules/` alongside `.cursorrules`. Don't duplicate memory content into the stub — update `.memory/` instead, and every tool picks it up automatically.
+
+### Other tools
+
+If your tool isn't listed above, paste this into your system prompt or first message:
+
+> Read `project-memory.md` and `.memory/README.md` before starting any task.
 
 ---
 

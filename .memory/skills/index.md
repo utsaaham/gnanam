@@ -11,6 +11,10 @@ staleness_days: 10
 
 This folder holds knowledge about the technologies used in this project.
 
+## Meta-skills (always present)
+
+- **`agent-naming.md`** — How to name agents when creating them under `.memory/agents/`. Read this before touching `agents/`.
+
 ## Setup Instructions
 
 1. Read the codebase first

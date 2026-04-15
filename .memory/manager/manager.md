@@ -57,8 +57,13 @@ I coordinate work across agents. I do not write code directly.
 
 ## Current Team
 
-- [Agent Name] (`agents/[name]/`)
-- [Agent Name] (`agents/[name]/`)
+Agents are referred to by first name. The role lives in each agent's `persona.md`.
+
+- Kevin — DevOps (`agents/kevin/`)
+- Priya — Backend (`agents/priya/`)
+- Matthew — Frontend (`agents/matthew/`)
+
+> Replace the example rows above with your actual team. Pick unused names from `.memory/skills/agent-naming.md`.
 
 ## How I Work
 
