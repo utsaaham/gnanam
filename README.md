@@ -144,20 +144,16 @@ No code gets written without loading rules first. No feature ships without tests
 
 ## Integrating with AI Tools
 
-Each AI tool has its own native instruction file at the repo root. Gnanam ships a ready-made stub for **10 tools** — each file tells the agent to read `project-memory.md` and `.memory/README.md` before doing anything. Pick the one your tool loads automatically; if you use multiple tools, they all point at the same memory so context stays in sync.
+Each AI tool has its own native instruction file at the repo root. Gnanam currently ships ready-made stubs for **4 tools** — each file tells the agent to read `project-memory.md` and `.memory/README.md` before doing anything. Pick the one your tool loads automatically; if you use multiple tools, they all point at the same memory so context stays in sync.
 
 | Tool | File | Notes |
 |------|------|-------|
 | **Claude Code** | `CLAUDE.md` | Loaded automatically by Claude Code. |
-| **OpenAI Codex** | `AGENTS.md` | Also the cross-tool open standard (Cursor, Windsurf, Gemini CLI, Zed, RooCode all read it). |
+| **OpenAI Codex** | `AGENTS.md` | The cross-tool open standard — many other tools (Cursor, Windsurf, Gemini CLI, Zed, RooCode) also read this file, so it doubles as a fallback. |
 | **Cursor** | `.cursorrules` | Legacy single-file format; still read by Cursor. |
-| **Windsurf** | `.windsurfrules` | |
-| **Gemini CLI** | `GEMINI.md` | |
-| **GitHub Copilot** | `.github/copilot-instructions.md` | |
-| **Cline** | `.clinerules` | |
-| **Aider** | `CONVENTIONS.md` | Point aider at it via `--read CONVENTIONS.md` or `.aider.conf.yml`. |
-| **Zed AI** | `.rules` | |
-| **Continue.dev** | `.continuerules` | |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Lives under `.github/` alongside GitHub's other config. |
+
+> Support for more tools (Windsurf, Gemini CLI, Cline, Aider, Zed, Continue.dev) will be added later. For now, any tool that supports `AGENTS.md` will pick up the memory via that file.
 
 ### If you want to add tool-specific rules
 

@@ -8,7 +8,7 @@ staleness_days: 14
 
 # .memory — Shared Project Memory
 
-This is a tool-agnostic memory system. Any AI coding assistant (Claude Code, Codex, Cursor, Windsurf, Gemini CLI, Copilot, Cline, Aider, Zed, Continue) can load it by following the read order below. The root `README.md` has the full tool → instruction file mapping.
+This is a tool-agnostic memory system. Currently wired for **Claude Code, OpenAI Codex, Cursor, and GitHub Copilot** via their native instruction files (`CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.github/copilot-instructions.md`). Any other tool that supports `AGENTS.md` will also pick it up. The root `README.md` has the full tool → instruction file mapping.
 
 ## What lives here
 
@@ -81,7 +81,7 @@ Keep the last 3–5 rows. Trim older ones.
    - `.memory/agents/index.md`
    - `.memory/skills/agent-naming.md`
    - `project-memory.md`
-   - The 10 tool stubs at repo root (`CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.windsurfrules`, `GEMINI.md`, `.github/copilot-instructions.md`, `.clinerules`, `CONVENTIONS.md`, `.rules`, `.continuerules`)
+   - The 4 tool stubs at repo root: `CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.github/copilot-instructions.md`
 2. Diff them against this project's copies.
 3. If the upstream structure, naming rules, or stub template has changed, apply the update here.
 4. **Preserve all populated project content.** Updates only touch scaffolding — templates, rules, meta-skills, and tool stubs. The project-specific content in `context/`, populated agents, skills, and rules stays yours.
